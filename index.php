@@ -1,3 +1,20 @@
+<?php
+
+if($_POST["submit"]) {
+    $recipient="gupta.saksham98@gmail.com";
+    $subject="Form to email message";
+    $sender=$_POST["sender"];
+    $senderEmail=$_POST["gupta.saksham98@gmail.com"];
+    $message=$_POST["message"];
+
+    $mailBody="Name: $sender\nEmail: $senderEmail\n\n$message";
+
+    mail($recipient, $subject, $mailBody, "From: $sender <$senderEmail>");
+
+    $thankYou="<p>Thank you! Your message has been sent.</p>";
+}
+
+?>
 <!DOCTYPE HTML>
 <!--
 	Ethereal by HTML5 UP
@@ -111,7 +128,7 @@ engineers and researchers to help explore more areas of technology and science.<
 							<section class="panel color4-alt">
 								<div class="inner columns divided">
 									<div class="span-3-25">
-										<form method="post" action="contact.php">
+										<form method="post" action="index.php">
 											<div class="field half">
 												<label for="name">Name</label>
 												<input type="text" name="name" id="name" />
